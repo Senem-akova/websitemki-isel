@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senem | Kişisel Web Sitesi</title>
+  <link rel="icon" type="image/jpeg" href="resimler/maskot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sabit Üst Menü -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#kapak" class="nav-brand">Senem</a>
+      <nav class="nav-menu">
+        <a href="#kapak" class="nav-link">Kapak</a>
+        <a href="#hakkimda" class="nav-link">Hakkımda</a>
+        <a href="#ilgi-alanlari" class="nav-link">İlgi Alanlarım</a>
+        <a href="#iletisim" class="nav-link">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Kapak Bölümü (Tam Ekran) -->
+  <section id="kapak" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-image-wrapper">
+        <img src="resimler/kapak.jpg" alt="Çöl manzarasında devasa bir hamburgere gülümseyerek bakan sevimli kaktüs maskotu" class="hero-image">
+      </div>
+      <div class="hero-text-wrapper">
+        <h1 class="hero-title">Senem</h1>
+        <p class="hero-intro">Yönetim Bilişim Sistemleri yolculuğunda teknolojiye meraklı, yenilikçi ve öğrenmeye tutkulu bir üniversite öğrencisiyim.</p>
+        <div class="hero-actions">
+          <a href="#hakkimda" class="btn btn-primary">Beni Tanıyın</a>
+          <a href="#iletisim" class="btn btn-outline">İletişime Geçin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Dalgalı Geçiş -->
+    <div class="wave-divider wave-hero-bottom">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Hakkımda Bölümü -->
+  <section id="hakkimda" class="about-section">
+    <div class="container">
+      <h2 class="section-title">Hakkımda</h2>
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <img src="resimler/maskot.jpg" alt="Çöl atmosferinde nostaljik bir pikap başında kulaklıkla müzik dinleyen neşeli kaktüs maskotu" class="about-image">
+        </div>
+        <div class="about-text-wrapper">
+          <div class="about-card">
+            <p class="about-lead">
+              Yönetim Bilişim Sistemleri (YBS) öğrencisi olarak teknolojiyi, işletmeyi ve yeni fikirler üretmeyi keşfettiğim heyecan dolu bir üniversite yolculuğundayım. Günlerimi okuluma odaklanarak, bilişim dünyasında kendimi sürekli geliştirmeye ve öğrenmeye adayarak geçiriyorum. Derslerden arta kalan zamanlarda ise müzik dinleyerek, sporla enerjimi tazeleyerek ve lezzetli yemekleri keşfederek hayatın ritmini yakalıyorum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dalgalı Geçiş -->
+    <div class="wave-divider wave-about-bottom">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C200,80 420,-30 650,50 C880,130 1050,30 1200,80 L1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- İlgi Alanlarım Bölümü -->
+  <section id="ilgi-alanlari" class="interests-section">
+    <div class="container">
+      <h2 class="section-title">İlgi Alanlarım</h2>
+      <div class="cards-grid">
+        <!-- Kart 1: Müzik -->
+        <article class="interest-card">
+          <div class="card-image-box">
+            <img src="resimler/kart-1.jpg" alt="Çölde astronot kaskıyla dev hamburgere hayranlıkla bakan kaktüs maskotu" class="card-image">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Müzik</h3>
+            <p class="card-text">Çalışırken, dinlenirken ve hayatın her anında bana eşlik eden, zihnimi tazeleyen en büyük ilham kaynağım.</p>
+          </div>
+        </article>
+
+        <!-- Kart 2: Spor -->
+        <article class="interest-card">
+          <div class="card-image-box">
+            <img src="resimler/kart-2.jpg" alt="Çöl kumları üzerinde kafa bandıyla dev tenis topuna doğru koşan sportif kaktüs" class="card-image">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Spor</h3>
+            <p class="card-text">Hareket halinde kalarak enerjimi yükselttiğim, günün temposuna zindelik katan vazgeçilmez alışkanlığım.</p>
+          </div>
+        </article>
+
+        <!-- Kart 3: Yemek -->
+        <article class="interest-card">
+          <div class="card-image-box">
+            <img src="resimler/kart-3.jpg" alt="Gün batımında çölde dev tenis topuna doğru neşeyle koşan kaktüs illüstrasyonu" class="card-image">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Yemek</h3>
+            <p class="card-text">Yeni lezzetler tatmak, farklı mutfak kültürlerini tanımak ve güzel sofralarda sevdiklerimle anılar biriktirmek.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Dalgalı Geçiş -->
+    <div class="wave-divider wave-interests-bottom">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C180,95 380,10 600,65 C820,120 1020,20 1200,75 L1200,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- İletişim Bölümü -->
+  <section id="iletisim" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">İletişim</h2>
+      <p class="contact-desc">Bilişim dünyası, ortak projeler ya da fikir alışverişi için dilediğiniz zaman aşağıdaki kanallardan bana ulaşabilirsiniz.</p>
+      <div class="contact-links">
+        <a href="mailto:senem@example.com" class="contact-pill">E-posta</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-pill">LinkedIn</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="contact-pill">Instagram</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-pill">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Altbilgi (Footer) -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p class="footer-note">Bu sitedeki görseller yapay zekâ ile üretildi.</p>
+      <p class="footer-copy">&copy; 2026 Senem. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

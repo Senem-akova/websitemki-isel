@@ -1,0 +1,594 @@
+/* ==========================================================================
+   Senem - Kişisel Web Sitesi Stilleri
+   Kurallar:
+   - Zemin: #FDF6EE
+   - Yazı: #2C1810
+   - Vurgu: #D96B43
+   - Başlık Fontu: 'Baloo 2'
+   - Yuvarlatılmış Köşeler: 24px
+   - Dalgalı Geçişler
+   - Buton Hover: Hafifçe büyüme
+   - Yasaklar: Emoji yok, hazır ikon yok, hazır fotoğraf yok.
+   ========================================================================== */
+
+:root {
+  --color-bg: #FDF6EE;
+  --color-text: #2C1810;
+  --color-accent: #D96B43;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F6EDE1;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --font-heading: 'Baloo 2', cursive, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-warm: 0 12px 32px rgba(44, 24, 16, 0.08);
+  --shadow-hover: 0 16px 40px rgba(217, 107, 67, 0.2);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Tipografi
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 2.75rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 6px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+  margin: 0.5rem auto 0;
+}
+
+/* ==========================================================================
+   Düzen ve Kapsayıcılar
+   ========================================================================== */
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==========================================================================
+   Sabit Üst Menü (Navbar)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(253, 246, 238, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid rgba(217, 107, 67, 0.15);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Kapak Bölümü (Hero - Tam Ekran)
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5% 120px;
+  background: linear-gradient(180deg, #FDF6EE 0%, #F8E8D5 100%);
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+  z-index: 2;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-warm);
+  border: 4px solid var(--color-surface);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02);
+}
+
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: var(--color-accent);
+  letter-spacing: -0.5px;
+}
+
+.hero-intro {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Butonlar (Hover Efekti: Hafif Büyüme)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #C85B33;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Dalgalı Geçişler (Wavy Dividers)
+   ========================================================================== */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.wave-hero-bottom svg {
+  fill: #FFFFFF;
+}
+
+.wave-about-bottom svg {
+  fill: #F8E8D5;
+}
+
+.wave-interests-bottom svg {
+  fill: #FFFFFF;
+}
+
+/* ==========================================================================
+   Hakkımda Bölümü
+   ========================================================================== */
+.about-section {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 100px 0 140px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.about-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-warm);
+  border: 4px solid var(--color-surface-soft);
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+}
+
+.about-card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2.5rem;
+  border: 2px dashed rgba(217, 107, 67, 0.3);
+  box-shadow: var(--shadow-warm);
+}
+
+.about-lead {
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   İlgi Alanlarım Bölümü
+   ========================================================================== */
+.interests-section {
+  position: relative;
+  background-color: #F8E8D5;
+  padding: 100px 0 140px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.interest-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-warm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  border: 3px solid #FFFFFF;
+}
+
+.interest-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.interest-card:hover .card-image {
+  transform: scale(1.06);
+}
+
+.card-body {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.85rem;
+  color: var(--color-accent);
+}
+
+.card-text {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   İletişim Bölümü
+   ========================================================================== */
+.contact-section {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 100px 0 100px;
+  text-align: center;
+}
+
+.contact-desc {
+  font-size: 1.25rem;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-pill {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+  text-decoration: none;
+  border: 2px solid var(--color-accent);
+  box-shadow: var(--shadow-warm);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-pill:hover {
+  transform: scale(1.08);
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==========================================================================
+   Altbilgi (Footer)
+   ========================================================================== */
+.footer {
+  background-color: var(--color-bg);
+  border-top: 2px solid rgba(217, 107, 67, 0.15);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-note {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.footer-copy {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Mobil Uyumluluk (Responsive)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    height: 64px;
+  }
+
+  .nav-menu {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-section {
+    padding: 85px 5% 90px;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-intro {
+    font-size: 1.15rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .about-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .about-lead {
+    font-size: 1.1rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .contact-pill {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Erişilebilirlik: Hareketi Azaltmayı Seçen Kullanıcılar (Prefers Reduced Motion)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .btn:hover,
+  .contact-pill:hover,
+  .interest-card:hover,
+  .nav-link:hover,
+  .hero-image:hover,
+  .about-image:hover {
+    transform: none !important;
+  }
+}
